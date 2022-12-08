@@ -1,0 +1,58 @@
+
+<div ngClass="search">
+    <div ngClass='search-form'>
+        <div ngClass='form'>
+            <p>Điểm xuất phát</p>
+            <select ngClass="form-select" aria-label="Default select example">
+                <option *ngFor="let travel of travels">
+                    {{travel.start}}
+                </option>
+            </select>
+        </div>
+        <div ngClass='form'>
+            <p>Điểm đến</p>
+            <select ngClass="form-select" aria-label="Default select example">
+                <option *ngFor="let travel of travels">
+                    {{travel.arrival}}
+                </option>
+            </select>
+        </div>
+
+        <div ngClass='form'>
+            <p>Giá tiền</p>
+            <select  class="form-select" aria-label="Default select example">
+
+                <option *ngFor="let selectSearch of selectSearchs">{{selectSearch.option}} </option>
+
+            </select>
+        </div>
+        <div ngClass='form'>
+            <p>Ngày khởi hành</p>
+            <input ngClass="form-select" aria-label="Default select example" type='date' placeholder="Chọn ngày" />
+        </div>
+
+        <button type="button" ngClass="btn btn-danger">Tìm kiếm</button>
+
+    </div>
+</div>
+<p ngClass="title">{{title}} </p>
+<div ngClass="tour-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let travel of travels">
+                <img ngClass="imgTour" [src]="travel.imgUrl">
+                <div ngClass="time"><b>{{travel.time}} </b></div>
+                <div ngClass="name-pri">
+                    <div ngClass="nametour">{{travel.nameTour}} </div>
+                    <span ngClass="pri-boo">
+                        <p ngClass="price">{{travel.price}}đ </p>
+                        <button type="button" class="btn">Đặt ngay</button>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

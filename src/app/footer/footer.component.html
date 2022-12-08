@@ -1,0 +1,14 @@
+<footer>
+
+    <div *ngFor="let footer of footers">
+
+        <div ngClass="about">{{footer.about}}</div>
+        <div ngClass="icon">
+            <img ngClass="img-footer" [src]='footer.iconUrl'>
+            <div>{{footer.name}} </div>
+        </div>
+    </div>
+    <app-form></app-form>
+
+
+</footer>

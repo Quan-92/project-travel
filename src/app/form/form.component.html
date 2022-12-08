@@ -1,0 +1,21 @@
+
+<form novalidate (ngSubmit)="onClick()" [formGroup]="userInput" class="row">
+    <p class="title">Contact</p>
+    <label>Full Name</label>
+    <input class="form-control" type="text" id="example-text-input" formControlName="fullName" />
+    <span *ngIf="userInput.controls['fullName'].errors?.['required']">Name is required</span>
+
+    <br>
+    <label>Phone number</label>
+    <input class="form-control" type="double" id="example-text-input" formControlName="tel" />
+    <span *ngIf="userInput.controls['tel'].errors?.['required']">Required to enter Phone Number</span>
+    <span *ngIf="userInput.controls['tel'].errors?.['minlength']">phone number is not enough</span>
+    <span *ngIf="userInput.controls['tel'].errors?.['pattern']">Incorrect number type</span>
+    <br>
+    <label>Email</label>
+    <input class="form-control" type="email" id="example-text-input" formControlName="email"  />
+    <span *ngIf="userInput.controls['email'].errors?.['required']">Required to enter email</span>
+    <span *ngIf="userInput.controls['email'].errors?.['pattern']">Email type is not correct</span>
+    <button class="form-control btn btn-danger" type="submit" [disabled]="!userInput.valid">Save</button>
+
+</form>
